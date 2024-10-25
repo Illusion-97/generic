@@ -2,12 +2,14 @@ package com.example.generic.base.services;
 
 import com.example.generic.base.GenericId;
 import com.example.generic.base.mapper.GenericMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
+@RequiredArgsConstructor
 public abstract class GenericServiceImpl<
         I,
         D extends GenericId<I>,
@@ -15,8 +17,8 @@ public abstract class GenericServiceImpl<
         R extends JpaRepository<E,I>,
         M extends GenericMapper<D,E>
         > implements GenericService<D,I>{
-    protected R repository;
-    protected M mapper;
+    protected final R repository;
+    protected final M mapper;
 
     @Override
     public Page<D> findAll(Pageable pageable) {
