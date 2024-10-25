@@ -14,5 +14,5 @@ import java.util.List;
 @Data
 @Accessors(chain = true)
 public class UserDto extends BaseDto {
-    String email;
+    private String email;
 }

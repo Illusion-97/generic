@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public class GenericServiceImpl<
+public abstract class GenericServiceImpl<
         I,
         D extends GenericId<I>,
         E extends GenericId<I>,

@@ -6,7 +6,7 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class BaseDto implements GenericId<Long> {
+public abstract class BaseDto implements GenericId<Long> {
     private Long id;
     private int version;
 }
